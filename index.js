@@ -5,6 +5,8 @@ const conectarDB = require("./config/db");
 const app = express();
 //Conectar la base de datos
 conectarDB();
+//Habilitar express.json
+app.use(express.json({ extended: true }));
 //Puerto de la APP
 const PORT = process.env.PORT || 4000;
 
