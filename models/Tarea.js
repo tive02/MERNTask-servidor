@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const TareaSchema = mongoose.Schema({
   nombre: {
     type: String,
