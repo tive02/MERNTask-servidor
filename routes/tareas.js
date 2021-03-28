@@ -14,5 +14,7 @@ router.post(
   [check("proyecto", "El proyecto es obligatorio").not().isEmpty()],
   tareaController.crearTarea
 );
+//obtener las tareas por proyecto
+router.get("/", auth, tareaController.obtenerTareas);
 
 module.exports = router;
