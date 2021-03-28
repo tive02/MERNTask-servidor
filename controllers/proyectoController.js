@@ -21,3 +21,15 @@ exports.crearProyecto = async (req, res) => {
     res.status(500).send("Existio un Error");
   }
 };
+
+exports.obtenerProyectos = async (req, res) => {
+  try {
+    const proyectos = await Proyecto.find({ creador: req.usuario.id }).sort({
+      creado: -1,
+    });
+    res.json({ proyectos });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Existio un error");
+  }
+};
