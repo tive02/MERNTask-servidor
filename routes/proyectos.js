@@ -22,4 +22,7 @@ router.put(
   [check("nombre", "El nombre del proyecto es obligatorio").not().isEmpty()],
   proyectoController.actualizarProyecto
 );
+//Eliminar el proyecto
+router.delete("/:id", auth, proyectoController.eliminarProyecto);
+
 module.exports = router;
